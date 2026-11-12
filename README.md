@@ -1,67 +1,128 @@
-# 🗝️ Labirinto dos Enigmas
+# 🧩 Labirinto dos Enigmas
 
-Um jogo de exploração e raciocínio lógico desenvolvido em **Python**, utilizando a biblioteca **Pygame**. O jogador precisa explorar labirintos, encontrar chaves espalhadas pelo mapa e resolver enigmas matemáticos para conseguir avançar pelas fases e encontrar a saída.
+**Um projeto de Matemática Computacional que combina exploração de labirintos, desafios matemáticos e algoritmos de busca e otimização de caminhos.**
 
-## 🎮 Sobre o projeto
+## 📖 Sobre o projeto
 
-O Labirinto dos Enigmas combina exploração, resolução de problemas e raciocínio lógico em uma experiência de jogo com temática de masmorra fantástica.
+O **Labirinto dos Enigmas** é um jogo desenvolvido em Python com a biblioteca Pygame, cujo objetivo é explorar ambientes com obstáculos, coletar chaves, resolver desafios matemáticos e encontrar a saída.
 
-Cada fase apresenta um labirinto gerado aleatoriamente, aumentando o desafio conforme o jogador avança. Para completar cada etapa, é necessário explorar o ambiente, coletar todas as chaves exigidas, encontrar e resolver o enigma e, finalmente, liberar a passagem para a próxima fase.
+O projeto busca demonstrar, de maneira prática e interativa, como conceitos de Matemática Computacional podem ser aplicados em problemas de navegação, planejamento de rotas e otimização de caminhos.
 
-## ✨ Funcionalidades
+A proposta é inspirada em situações do mundo real, como o planejamento de entregas em diferentes endereços, a movimentação de robôs autônomos e a organização de trajetos em ambientes complexos.
 
-- **Labirintos aleatórios:** mapas gerados proceduralmente, proporcionando diferentes experiências a cada partida.
-- **Progressão de dificuldade:** três fases com desafios progressivos.
-- **Coleta de chaves:** quantidade crescente de chaves necessárias para avançar.
-- **Enigmas matemáticos:** desafios envolvendo sequências numéricas e raciocínio lógico.
-- **Sistema de portas:** a passagem só é liberada após cumprir os requisitos da fase.
-- **Sistema de dicas:** possibilidade de solicitar ajuda para encontrar caminhos.
-- **Ambientação temática:** visual inspirado em masmorras e aventuras fantásticas.
+## 🎮 Modos de jogo
 
-## 🧩 Enigmas do jogo
+### 🧑 Modo Jogador
 
-O jogo apresenta três desafios matemáticos:
+O jogador controla diretamente o personagem e precisa:
 
-| Fase | Desafio | Resposta |
-|---|---|---|
-| 1 | Sequência: 2, 4, 8, 16... | 32 |
-| 2 | Sequência de Fibonacci | 8 |
-| 3 | Sequência de números quadrados | 25 |
+- Explorar o labirinto.
+- Encontrar chaves espalhadas pelo mapa.
+- Resolver enigmas matemáticos.
+- Evitar obstáculos e becos sem saída.
+- Encontrar o portal para concluir cada fase.
 
-## 🕹️ Controles
+A dificuldade aumenta progressivamente conforme o jogador avança.
 
-| Tecla | Ação |
+### 🤖 Modo BOT
+
+Um agente computacional é responsável por analisar o labirinto e planejar seu percurso.
+
+O BOT precisa:
+
+- Identificar os caminhos disponíveis.
+- Localizar os objetivos obrigatórios.
+- Coletar todas as chaves.
+- Cumprir os requisitos dos enigmas.
+- Encontrar uma rota até o portal.
+- Buscar minimizar a distância total percorrida.
+
+O modo BOT também permite estudar e comparar diferentes estratégias de busca computacional.
+
+## 🧠 Conceitos de Matemática Computacional
+
+O projeto utiliza conceitos matemáticos e computacionais para representar e solucionar o problema de navegação.
+
+**Principais conceitos:**
+
+- Matrizes: representação do labirinto em uma estrutura bidimensional.
+- Grafos: representação das posições acessíveis e suas conexões.
+- Busca em largura (BFS): exploração de caminhos por níveis.
+- Busca A* (A-Star): busca orientada por custo e estimativa de distância.
+- Heurísticas: estimativa do custo restante até um objetivo.
+- Otimização de rotas: planejamento da sequência de visitação de múltiplos objetivos.
+
+### Algoritmos de busca
+
+**BFS — Breadth-First Search**
+
+Explora os vértices de um grafo por níveis e encontra o caminho com menor quantidade de movimentos quando todos os movimentos possuem o mesmo custo.
+
+**A* — A-Star**
+
+Utiliza uma função de avaliação que combina o custo já percorrido com uma estimativa da distância restante:
+
+\[
+f(n) = g(n) + h(n)
+\]
+
+Onde:
+
+- `g(n)`: custo acumulado do caminho.
+- `h(n)`: estimativa do custo restante.
+- `f(n)`: custo estimado total.
+
+Uma das heurísticas utilizadas em ambientes com movimentação horizontal e vertical é a distância Manhattan.
+
+## 🌎 Aplicação no mundo real
+
+O problema abordado pelo projeto possui relação com o planejamento de rotas de entrega.
+
+Imagine uma transportadora que precisa realizar entregas em vários endereços antes de retornar à base ou concluir seu percurso.
+
+Nesse cenário, é necessário considerar:
+
+- Distância entre os destinos.
+- Obstáculos e caminhos disponíveis.
+- Ordem de visitação dos endereços.
+- Distância total percorrida.
+- Tempo necessário para concluir as entregas.
+
+O labirinto funciona como uma representação simplificada desse ambiente, enquanto as chaves representam os destinos obrigatórios e o portal representa o destino final.
+
+## 📊 Análise de desempenho
+
+O projeto propõe comparar o desempenho dos algoritmos por meio de diferentes métricas:
+
+| Métrica | Descrição |
 |---|---|
-| W / ↑ | Movimentar para cima |
-| S / ↓ | Movimentar para baixo |
-| A / ← | Movimentar para esquerda |
-| D / → | Movimentar para direita |
-| H | Solicitar dica de caminho |
-| I | Solicitar dica do enigma |
-| Enter | Confirmar resposta |
-| R | Reiniciar a fase |
-| Esc | Sair do jogo |
+| Distância percorrida | Total de movimentos realizados |
+| Posições exploradas | Quantidade de posições analisadas |
+| Tempo de processamento | Tempo gasto pelo algoritmo para encontrar a solução |
+| Eficiência da rota | Qualidade do percurso encontrado |
+
+A análise permite observar como diferentes estratégias se comportam diante de labirintos com diferentes dimensões, obstáculos e quantidades de objetivos.
 
 ## 🛠️ Tecnologias utilizadas
 
-- **Python 3:** linguagem utilizada no desenvolvimento.
-- **Pygame:** biblioteca responsável pelos elementos gráficos, movimentação, eventos e mecânicas do jogo.
+- **Python 3:** desenvolvimento da lógica e dos algoritmos.
+- **Pygame:** criação da interface gráfica e interação com o jogo.
 
-## 🚀 Como executar o projeto
+## ⚙️ Como executar o projeto
 
 ### 1. Clone o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/Lucas-Dias07/matematica-computacional.git
 ```
 
 ### 2. Entre na pasta do projeto
 
 ```bash
-cd NOME_DA_PASTA
+cd matematica-computacional
 ```
 
-### 3. Instale a dependência
+### 3. Instale a biblioteca Pygame
 
 ```bash
 pip install pygame
@@ -69,30 +130,22 @@ pip install pygame
 
 ### 4. Execute o jogo
 
+Utilize o comando correspondente ao arquivo principal:
+
 ```bash
-python jogo.py
+python Labirinto_dos_Enigmas_BOT.py
 ```
 
-## 🧠 Conceitos de Matemática Computacional aplicados
+## 👥 Integrantes
 
-O desenvolvimento do jogo envolve conceitos importantes da Matemática Computacional e da Ciência da Computação:
+- **Lucas Gabriel Dias Costa**
+- **João Guilherme Machado Ferreira**
+- **Luiz Henrique Cordeiro dos Santos**
 
-- **Matrizes:** representação e organização dos mapas do labirinto.
-- **Grafos:** modelagem das posições e caminhos possíveis dentro do labirinto.
-- **Busca em largura (BFS):** algoritmo utilizado para encontrar caminhos e fornecer dicas ao jogador.
-- **Busca em profundidade (DFS):** utilizada na geração procedural dos labirintos.
-- **Lógica matemática:** aplicação de sequências numéricas e padrões na elaboração dos enigmas.
-- **Algoritmos:** implementação das regras de movimentação, coleta de itens e progressão entre fases.
+## 🎓 Disciplina
 
-## 🎯 Objetivo acadêmico
+Projeto desenvolvido para a disciplina de **Matemática Computacional**, com foco na aplicação de modelagem matemática, algoritmos de busca e otimização.
 
-O projeto tem como objetivo aplicar conceitos teóricos de Matemática Computacional na construção de uma aplicação interativa, demonstrando como estruturas matemáticas e algoritmos podem ser utilizados no desenvolvimento de jogos digitais.
+---
 
-## 👨‍💻 Autor
-
-**Lucas Gabriel Dias Costa**
-**João Guilherme Machado Ferreira**
-**Luiz Henrique Cordeiro dos Santos **
-
-
-Projeto acadêmico desenvolvido em Python.
+**Labirinto dos Enigmas — Explorando caminhos, resolvendo problemas e aplicando algoritmos.**
