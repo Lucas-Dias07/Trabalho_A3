@@ -134,9 +134,9 @@ python jogo.py
 
 ## 👥 Integrantes
 
-- **Lucas Gabriel Dias Costa**
-- **João Guilherme Machado Ferreira**
-- **Luiz Henrique Cordeiro dos Santos**
+- **Lucas Gabriel Dias Costa - 326124418**
+- **João Guilherme Machado Ferreira  - 326128074**
+- **Luiz Henrique Cordeiro dos Santos - 326122345**
 
 ## 🎓 Disciplina
 
